@@ -3,6 +3,9 @@ const express = require("express");
 const hbs=require('hbs')
 const geoCode = require('./utils/geoCode')
 const app = express();
+
+const port = process.env.PORT || 3000
+
 const publicDirectoryPath = path.join(__dirname, "../public");       //static path
 const viewsPath= path.join(__dirname, "../templates/views");         //views path
 const partialsPath= path.join(__dirname, "../templates/partials");      //partials path
@@ -67,6 +70,6 @@ app.get('*',(req,res)=>{
         name:'marouan'
     })
 })
-app.listen(3000, () => {
-  console.log("server running in port 3000");
+app.listen(port, () => {
+  console.log("server running in port "+port);
 });
